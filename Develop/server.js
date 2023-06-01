@@ -16,16 +16,14 @@ app.get('/notes',(req, res)=>{
 });
 
 app.get('/api/notes',(req, res)=>{
-  fs.readFile('./db/db.json', (err, results)=> {
-    if(err){
-      throw err
-    } res.send(results);
-  })
+ res.sendFile(path.join__dirname, '../db/db.json');
 });
 
 app.post('/api/notes',(req, res)=>{
   console.log(req.body)
-  fs.readFile
+  let db = fs.readFileSync('db/db.json');
+  db = JSON.parse(db);
+  req.json(db);
 })
 
 app.get('*',(req, res)=>{
