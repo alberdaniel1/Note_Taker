@@ -76,7 +76,7 @@ app.delete("/api/notes/:id", (req, res) => {
    let notesArray = JSON.parse(notes);
  
 
-   
+
    for (var i=0; i<notesArray.length; i++){
      if(deleteId == notesArray[i].id) {
        notesArray.splice(i,1);
